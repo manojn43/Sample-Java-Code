@@ -1,0 +1,49 @@
+package com.manoj;
+
+public class Tree {
+
+	private BTNode root;
+
+	private int size;
+
+	// Insert a tree node using level order insertion
+	void insert(int data) {
+
+		BTNode newNode = new BTNode(data);
+
+		if (root == null) {
+			root = newNode;
+			size++;
+		}
+
+		Queue<BTNode> queue = new Queue<BTNode>();
+		queue.enqueue(root);
+		while (!queue.isEmpty()) {
+			BTNode temp = queue.dequeue();
+
+			if (temp.getLeft() != null) {
+				queue.enqueue(temp.getLeft());
+			} else {
+				temp.setLeft(newNode);
+				size++;
+				return;
+			}
+			if (temp.getRight() != null) {
+				queue.enqueue(temp.getRight());
+			} else {
+				temp.setRight(newNode);
+				size++;
+				return;
+			}
+		}
+	}
+
+	void traverse() {
+
+		if (root == null) {
+			System.out.println("Tree is empty");
+		} else {
+			Queue queue = new Queue();
+		}
+	}
+}

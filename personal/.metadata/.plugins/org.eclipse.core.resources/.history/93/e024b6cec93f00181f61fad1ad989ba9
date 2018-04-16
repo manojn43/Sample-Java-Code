@@ -1,0 +1,21 @@
+package com.manoj;
+
+public class Queue {
+
+	private Node front,rear;
+	
+	private int size;
+	
+	void enqueue(int data){
+		
+		Node newNode = new Node(data);
+		if(rear==null){
+			rear=newNode;
+			size++;
+			front=rear;
+			return;
+		}
+
+		rear.se
+	}
+}

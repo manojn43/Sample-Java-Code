@@ -1,0 +1,40 @@
+package com.manoj;
+
+public class Queue {
+
+	private Node front, rear;
+
+	private int size;
+
+	void enqueue(BTNode data) {
+
+		Node<BTNode> newNode = new Node(data);
+		if (rear == null) {
+			front = rear = newNode;
+		} else {
+			rear.setNext(newNode);
+		}
+		size++;
+
+	}
+
+	int dequeue() {
+		if (front == null && rear == null) {
+			System.out.println("Queue is Empty");
+			return -1;
+		}
+		if (front != rear) {
+			Node temp = front;
+			front = front.getNext();
+			int data = temp.getData();
+			size--;
+			return data;
+		} else {
+			int data = front.getData();
+			front = rear = null;
+			size--;
+			return data;
+		}
+
+	}
+}

@@ -1,0 +1,11 @@
+package com.manoj;
+
+public class Tree {
+
+	private BTNode root;
+
+	// Insert a tree node using level order insertion
+	void insert(int data) {
+
+	}
+}

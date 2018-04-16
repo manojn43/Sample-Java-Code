@@ -1,0 +1,16 @@
+package com.manoj;
+
+public class TreeTraversing {
+
+	static void preOrder(BTNode node) {
+
+		if (node == null) {
+			return;
+		} else {
+			System.out.println(node.getData());
+			preOrder(node.getLeft());
+			preOrder(node.getRight());
+		}
+	}
+
+}

@@ -1,0 +1,48 @@
+package com.manoj.stack;
+
+public class Stack {
+
+	private int top;
+	private int size;
+	private int[] stackArr;
+	
+	public Stack(int capacity) {
+		this.stackArr = new int[capacity];
+	}
+	
+	void push(int data){
+		if(size==stackArr.length){
+			System.out.println("stack overflow");
+		}else{
+			stackArr[size]=data;
+			size++;
+			top=data;
+		}
+	}
+	
+	void pop(){
+		if(size==0){
+			System.out.println("stack underflow");
+		}else{
+			int data = stackArr[size];
+			size--;
+			top = stackArr[size];
+			System.out.println(data);
+		}
+	}
+	
+	int getSize(){
+		return size;
+	}
+	boolean isEmpty(){
+		return size==0;
+	}
+	
+	int peek(){
+		if(isEmpty()){
+			return -1;
+		}else{
+			return top;
+		}
+	}
+}
